@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/io/static/css/main.5b5b117e.css",
+    "main.js": "/io/static/js/main.d5c6add0.js",
+    "static/js/369.bc5453d6.chunk.js": "/io/static/js/369.bc5453d6.chunk.js",
+    "static/js/628.793757d3.chunk.js": "/io/static/js/628.793757d3.chunk.js",
+    "static/js/809.015d3bbb.chunk.js": "/io/static/js/809.015d3bbb.chunk.js",
+    "static/media/raichu.glb": "/io/static/media/raichu.36089dc1319c127db24d.glb",
+    "static/media/heli-ball.glb": "/io/static/media/heli-ball.0fd1aeb59dd512ab0c17.glb",
+    "static/media/ball.glb": "/io/static/media/ball.49f23edd80a87c0214dc.glb",
+    "static/media/night.hdr": "/io/static/media/night.9b906cbcd13f7de9c16c.hdr",
+    "static/media/inn2-transformed.glb": "/io/static/media/inn2-transformed.2b0784372a7e26061e1a.glb",
+    "static/media/ghost-transformed.glb": "/io/static/media/ghost-transformed.ec8a3675c653d3822bb1.glb",
+    "static/media/loading.glb": "/io/static/media/loading.8b1f9dc45fa6d7e1a91f.glb",
+    "index.html": "/io/index.html",
+    "main.5b5b117e.css.map": "/io/static/css/main.5b5b117e.css.map",
+    "main.d5c6add0.js.map": "/io/static/js/main.d5c6add0.js.map",
+    "369.bc5453d6.chunk.js.map": "/io/static/js/369.bc5453d6.chunk.js.map",
+    "628.793757d3.chunk.js.map": "/io/static/js/628.793757d3.chunk.js.map",
+    "809.015d3bbb.chunk.js.map": "/io/static/js/809.015d3bbb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b5b117e.css",
+    "static/js/main.d5c6add0.js"
+  ]
+}
