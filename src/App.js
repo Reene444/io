@@ -1,12 +1,12 @@
 import { Canvas , useLoader} from '@react-three/fiber';
 import { Physics, RigidBody , Collider} from '@react-three/rapier';
-import { Gltf, Environment, Fisheye, KeyboardControls,useGLTF } from '@react-three/drei';
+import { Gltf, Environment, Fisheye, KeyboardControls,useGLTF,Text3D } from '@react-three/drei';
 import { useEffect, useState ,Suspense, lazy } from 'react';
 import Controller from 'ecctrl';
 import { ghostModel, innModel, nightEnvironmentModel } from 'some-3d-models';
 import { Html } from '@react-three/drei';
-import { FaSpinner } from 'react-icons/fa'; 
 import LoadingModel from './components/LoadingModel';
+import { ImRoad } from 'react-icons/im';
 const HeliBallModel = lazy(() => import('./components/HeliBallModel'));
 const RaichuModel = lazy(() => import('./components/RaichuModel'));
 const BallModel = lazy(() => import('./components/BallModel'));
@@ -189,6 +189,8 @@ export default function App() {
            </RigidBody>
 
 
+
+      
           {/* 渲染其他玩家 */}
           {/* {Object.keys(players).map((id) => (
             <Gltf
