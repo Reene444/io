@@ -2,7 +2,13 @@
   "name": "ecctrl-fisheye",
   "version": "1.0.0",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "3D",
+    "React",
+    ".glb model loading",
+    "webgl",
+    "three.js"
+  ],
   "homepage": "https://reene444.github.io/io",
   "main": "src/index.js",
   "dependencies": {
@@ -18,7 +24,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^5.4.0",
-    "some-3d-models": "^1.0.19",
+    "some-3d-models": "^1.0.28",
     "three": "^0.157.0"
   },
   "scripts": {
