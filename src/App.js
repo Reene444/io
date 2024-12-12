@@ -10,6 +10,7 @@ const HeliBallModel = lazy(() => import('./components/HeliBallModel'));
 const RaichuModel = lazy(() => import('./components/RaichuModel'));
 const BallModel = lazy(() => import('./components/BallModel'));
 const GithubTextModel = lazy(() => import( './components/GithubTextModel'));
+const ShiBaModel=lazy(()=>import('./components/ShiBaModel'));
 export default function App() {
  
   const keyboardMap = [
@@ -192,9 +193,9 @@ export default function App() {
           <BallModel  scale={0.61} position={[0,0,0]}/>
            </RigidBody>
     
-                   {/* <GithubTextModel  rotation={[0,-Math.PI*15/18,0]} scale={1} position={[1.3,0,5]}  /> */}
+          <GithubTextModel  rotation={[0,-Math.PI*15/18,0]} scale={1} position={[1.3,0,5]}  />
 
-          {/* <ShiBaModel rotation={[0,Math.PI*15/16,0]} scale={0.61} position={[-13.7,1.4,15.5]}/> */}
+          <ShiBaModel rotation={[0,Math.PI*15/16,0]} scale={0.61} position={[-13.7,1.4,15.5]}/>
 
           {/* <MiniMap target={playerRef.current || { position: { x: 0, y: 0, z: 0 } }} /> */}
 

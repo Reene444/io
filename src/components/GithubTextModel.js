@@ -6,6 +6,7 @@ import { KernelSize } from 'postprocessing'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { useFrame } from '@react-three/fiber';
 import { GithubText } from "some-3d-models";
+import * as THREE from 'three'
 const GithubTextModel = ({ position = [0, 0, 0], rotation = [0, 0, 0], scale = 1 }) => {
   const { scene } = useGLTF(GithubText);
   const rigidBodyRef = useRef();
