@@ -1,15 +1,15 @@
 import { Canvas , useLoader} from '@react-three/fiber';
 import { Physics, RigidBody , Collider} from '@react-three/rapier';
 import { Gltf, Environment, Fisheye, KeyboardControls,useGLTF,Text3D } from '@react-three/drei';
-import { useEffect, useState ,Suspense, lazy } from 'react';
+import { useEffect, useState ,Suspense, lazy,useRef } from 'react';
 import Controller from 'ecctrl';
 import { ghostModel, innModel, nightEnvironmentModel } from 'some-3d-models';
 import { Html } from '@react-three/drei';
 import LoadingModel from './components/LoadingModel';
-import { ImRoad } from 'react-icons/im';
 const HeliBallModel = lazy(() => import('./components/HeliBallModel'));
 const RaichuModel = lazy(() => import('./components/RaichuModel'));
 const BallModel = lazy(() => import('./components/BallModel'));
+const GithubTextModel = lazy(() => import( './components/GithubTextModel'));
 export default function App() {
  
   const keyboardMap = [
@@ -25,7 +25,7 @@ export default function App() {
   const [socket, setSocket] = useState(null);
   const [chatMessages, setChatMessages] = useState([]); // 存储聊天消息
   const [inputMessage, setInputMessage] = useState(''); // 当前输入的消息
-
+  const playerRef = useRef();
   // 当前玩家的唯一 ID
   const playerId = `player-${Math.random().toString(36).substr(2, 9)}`;
 
@@ -156,28 +156,32 @@ export default function App() {
         </Html>
 
     }>
-      <Fisheye zoom={0.4}>
         <Environment files={nightEnvironmentModel} ground={{ scale: 100 }} />
         <directionalLight intensity={0.8} castShadow shadow-bias={-0.0004} position={[-20, 20, 30]}>
           <orthographicCamera attach="shadow-camera" args={[-20, -20, -30, -20]} />
           
         </directionalLight>
         
-        <ambientLight intensity={0.2} />
+        <ambientLight intensity={0.7} />
          
-        <Physics  timeStep="vary"  >
+        <Physics  timeStep="vary" >
+       
           <HeliBallModel position={[-6,1.3,-1]} scale={5} rotation={[0,0,0]}/>
           <RaichuModel position={[-2,1,15]} scale={5} rotation={[-Math.PI/5,-Math.PI*28/29,0]}/>
+
         <KeyboardControls map={keyboardMap}>
             <Controller maxVelLimit={5} onUpdate={handlePlayerMovement}>
               {/* 当前玩家的模型 */}
-              <Gltf castShadow receiveShadow scale={0.315} position={[0, -0.5, 0]}  src={ghostModel} />
-
+              {/* <Suspense fallback={null}> */}
+              <Gltf castShadow receiveShadow scale={0.315} position={[0, -0.5, 0]}  src={ghostModel}  />
+      {/* </Suspense>  */}
             </Controller>
           </KeyboardControls>
-
+     
+      
           <RigidBody type="fixed" colliders="trimesh">
             {/* 场景模型 */}
+            <boxGeometry args={[10, 1, 10]} />
             <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src={innModel}  position={[0, 0, 0]}  />
             <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, Math.PI ]} scale={0.11} src={innModel}   position={[-12.3, 0, 0]} />
             <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, Math.PI ]} scale={0.11} src={innModel}   position={[-12.3, 2, 17.5]} />
@@ -187,8 +191,12 @@ export default function App() {
           <RigidBody type="dynamic" colliders="ball">
           <BallModel  scale={0.61} position={[0,0,0]}/>
            </RigidBody>
+    
+                   {/* <GithubTextModel  rotation={[0,-Math.PI*15/18,0]} scale={1} position={[1.3,0,5]}  /> */}
 
+          {/* <ShiBaModel rotation={[0,Math.PI*15/16,0]} scale={0.61} position={[-13.7,1.4,15.5]}/> */}
 
+          {/* <MiniMap target={playerRef.current || { position: { x: 0, y: 0, z: 0 } }} /> */}
 
       
           {/* 渲染其他玩家 */}
@@ -206,7 +214,7 @@ export default function App() {
 
         </Physics>
         
-      </Fisheye>
+
       </Suspense>
     </Canvas>
 
