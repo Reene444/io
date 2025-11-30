@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><meta name="theme-color" content="#000000"/><link rel="manifest" href="/manifest.json"/><link rel="shortcut icon" href="/icons-color.png"/><title>L.C</title><script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.min.js"></script><script type="import">{
+      "imports": {
+        "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+      }
+    }</script><script>!function(n){if("/"===n.search[1]){var e=n.search.slice(1).split("&").map(function(n){return n.replace(/~and~/g,"&")}).join("?");window.history.replaceState(null,null,n.pathname.slice(0,-1)+e+n.hash)}}(window.location),function(){console.error,console.log,console.warn;console.log=function(){},console.error=function(){},console.warn=function(){},window.addEventListener("error",function(n){(n.message||"").toLowerCase(),(n.filename||"").toLowerCase();return n.preventDefault(),!1},!0),window.addEventListener("unhandledrejection",function(n){return n.preventDefault(),!1})}()</script><script defer="defer" src="/static/js/main.a437f9dd.js"></script><link href="/static/css/main.384d6443.css" rel="stylesheet">
+  <script>
+    // Single Page Apps for GitHub Pages - 404 handler
+    // https://github.com/rafgraph/spa-github-pages
+    (function(l) {
+      // 如果已经是 /?/ 格式，直接解码并替换历史记录
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+        return;
+      }
+      
+      // 如果是根路径且没有查询参数，不做任何操作（避免循环）
+      if (l.pathname === '/' && !l.search && !l.hash) {
+        return;
+      }
+      
+      // 如果是 404.html，且不在根路径，重定向到根路径（但只执行一次）
+      if (l.pathname === '/404.html') {
+        // 使用 sessionStorage 标记，避免循环
+        if (!sessionStorage.getItem('404-redirect')) {
+          sessionStorage.setItem('404-redirect', 'true');
+          window.location.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
+          return;
+        } else {
+          sessionStorage.removeItem('404-redirect');
+        }
+      }
+      
+      // 如果是 index.html，重定向到根路径
+      if (l.pathname === '/index.html') {
+        window.location.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
+        return;
+      }
+      
+      // 只在非根路径时才重定向到 /?/ 格式
+      var pathSegmentsToKeep = 0;
+      var path = l.pathname.slice(1).split('/').slice(pathSegmentsToKeep);
+      if (path.length > 0 && path[0] !== '' && path[0] !== 'index.html' && path[0] !== '404.html') {
+        var newPath = '/' + path.join('/').replace(/&/g, '~and~');
+        var search = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '';
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/?/' + newPath.slice(1) + search + l.hash
+        );
+      }
+    }(window.location))
+  </script>
+
+</head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
